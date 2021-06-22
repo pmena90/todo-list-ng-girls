@@ -8,6 +8,12 @@
   flex-grow: 1;
 }
 
+.todo-input.error,
+.todo-input.error:focus {
+  border: solid 1px red;
+  outline: none;
+}
+
 :host(:not([hidden])) {
   display: flex;
   justify-content: space-between;

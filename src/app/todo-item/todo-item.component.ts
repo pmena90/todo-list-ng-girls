@@ -5,7 +5,10 @@ import { TodoItem } from '../interfaces/todo-item';
   selector: 'app-todo-item',
   template: `
     <div class="todo-item" *ngIf="editing">
-      <app-input-button-unit [title]="item.title" (submit)="editItem($event)"></app-input-button-unit>
+      <app-input-button-unit [title]="item.title"
+        [editing]="true"
+        (cancel)=toogleEditingItem()
+        (submit)="editItem($event)"></app-input-button-unit>
     </div>
     <div class="todo-item" *ngIf="!editing">
       <input type="checkbox"
@@ -62,5 +65,4 @@ export class TodoItemComponent implements OnInit {
   toogleEditingItem(): void {
     this.editing = !this.editing;
   }
-
 }
